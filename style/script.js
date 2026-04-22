@@ -1,11 +1,24 @@
 const music = document.getElementById("bg-music");
+const playBtn = document.getElementById("play-button");
 
-const playMusicOnce = () => {
-  music.play().catch(e => console.log("Music play blocked:", e));
-  window.removeEventListener("click", playMusicOnce);
-};
+// Hàm xử lý khi nhấn nút Play
+playBtn.addEventListener("click", function() {
+    // 1. Phát nhạc từ đầu
+    music.currentTime = 0;
+    music.play().catch(e => console.log("Music play blocked:", e));
 
-window.addEventListener("click", playMusicOnce);
+    // 2. Làm mờ và xóa nút Play
+    this.style.opacity = "0";
+    setTimeout(() => {
+        this.remove();
+    }, 300);
+
+    // 3. (Tùy chọn) Kích hoạt hiệu ứng bay của các ngôi sao nếu cần
+    // Vì code Canvas của bạn chạy liên tục nên không cần gọi lại animate()
+});
+
+// Lưu ý: Xóa hoặc comment lại các đoạn window.addEventListener("click", playMusicOnce) cũ
+// để tránh việc click vào màn hình cũng reset lại nhạc.
 
 const messages = [
   "君は僕の宇宙だよ。",

@@ -8,12 +8,11 @@ const playMusicOnce = () => {
 window.addEventListener("click", playMusicOnce);
 
 const messages = [
-  "Dr.Gifter",
-  "Em là vũ trụ của anh",
-  "Tình yêu bất tận giữa các vì sao",
-  "Em là ngôi sao sáng nhất",
-  "Anh tỏa sáng là vì em",
-  "Em thật tỏa sáng trên bầu trời của anh"
+  "君は僕の宇宙だよ。",
+  "星々の間で輝く永遠の愛。",
+  "君は一番眩しく輝く星だよ。",
+  "僕が輝けるのは君がいるからだよ。",
+  "君は僕の空でとても眩しく輝いているよ。"
 ];
 const fallingTexts = [];
 
